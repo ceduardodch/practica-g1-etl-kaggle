@@ -1,0 +1,12 @@
+$ docker compose up -d
+
+$ docker compose ps
+NAME                   IMAGE                COMMAND                  SERVICE             CREATED              STATUS                        PORTS
+practica_g1_postgres   postgres:16-alpine   "docker-entrypoint.s…"   postgres            About a minute ago   Up About a minute (healthy)   0.0.0.0:5433->5432/tcp
+
+$ docker inspect -f {{.State.Health.Status}} practica_g1_postgres
+healthy
+
+$ docker ps --filter name=practica_g1_postgres
+CONTAINER ID   IMAGE                COMMAND                  CREATED         STATUS                        PORTS                    NAMES
+71a43dbf5b0a   postgres:16-alpine   "docker-entrypoint.s…"   2 minutes ago   Up About a minute (healthy)   0.0.0.0:5433->5432/tcp   practica_g1_postgres

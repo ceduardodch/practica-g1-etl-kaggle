@@ -1,0 +1,1 @@
+loaded table order_items rows=112650 avg_price=120.65

@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Evidencia Docker Compose y contenedor activo</title>
+  <style>
+    body {
+      margin: 0;
+      background: #0f172a;
+      color: #e2e8f0;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+    }
+    main {
+      padding: 28px;
+    }
+    h1 {
+      margin: 0 0 18px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 28px;
+      letter-spacing: 0;
+    }
+    pre {
+      white-space: pre-wrap;
+      background: #020617;
+      border: 1px solid #334155;
+      border-radius: 8px;
+      padding: 20px;
+      font-size: 14px;
+      line-height: 1.45;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Evidencia Docker Compose y contenedor activo</h1>
+    <pre>$ docker compose up -d
+
+$ docker compose ps
+NAME                   IMAGE                COMMAND                  SERVICE             CREATED              STATUS                        PORTS
+practica_g1_postgres   postgres:16-alpine   &quot;docker-entrypoint.s…&quot;   postgres            About a minute ago   Up About a minute (healthy)   0.0.0.0:5433-&gt;5432/tcp
+
+$ docker inspect -f {{.State.Health.Status}} practica_g1_postgres
+healthy
+
+$ docker ps --filter name=practica_g1_postgres
+CONTAINER ID   IMAGE                COMMAND                  CREATED         STATUS                        PORTS                    NAMES
+71a43dbf5b0a   postgres:16-alpine   &quot;docker-entrypoint.s…&quot;   2 minutes ago   Up About a minute (healthy)   0.0.0.0:5433-&gt;5432/tcp   practica_g1_postgres
+</pre>
+  </main>
+</body>
+</html>
