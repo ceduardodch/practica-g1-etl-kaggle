@@ -1,0 +1,251 @@
+machine_id,server_name,operating_system,department,ip_address,network_segment,criticality,log_source
+SRV-0001,soc-node-0001,Windows,Tecnologia,84.9.164.252,Segment A,Low,Server
+SRV-0002,soc-node-0002,Windows,Finanzas,66.191.137.154,Segment B,Low,Firewall
+SRV-0003,soc-node-0003,Windows,Operaciones,198.219.82.17,Segment C,Low,Firewall
+SRV-0004,soc-node-0004,Mac OS X,Finanzas,101.228.192.255,Segment B,Medium,Firewall
+SRV-0005,soc-node-0005,Windows,Operaciones,189.243.174.238,Segment C,Low,Firewall
+SRV-0006,soc-node-0006,Linux,Operaciones,147.190.155.133,Segment C,Medium,Server
+SRV-0007,soc-node-0007,Linux,Tecnologia,77.16.101.53,Segment A,High,Server
+SRV-0008,soc-node-0008,Mac OS X,Tecnologia,178.157.14.116,Segment A,High,Firewall
+SRV-0009,soc-node-0009,Mac OS X,Finanzas,72.202.237.9,Segment B,High,Server
+SRV-0010,soc-node-0010,Windows,Tecnologia,160.88.194.172,Segment A,Medium,Server
+SRV-0011,soc-node-0011,Mac OS X,Finanzas,196.218.124.169,Segment B,Medium,Server
+SRV-0012,soc-node-0012,Linux,Finanzas,112.43.185.24,Segment B,Low,Firewall
+SRV-0013,soc-node-0013,Windows,Finanzas,98.96.110.38,Segment B,Medium,Server
+SRV-0014,soc-node-0014,Windows,Operaciones,111.204.103.106,Segment C,Low,Firewall
+SRV-0015,soc-node-0015,Linux,Finanzas,62.112.149.214,Segment B,High,Firewall
+SRV-0016,soc-node-0016,Linux,Operaciones,12.192.2.112,Segment C,Medium,Firewall
+SRV-0017,soc-node-0017,Windows,Finanzas,136.159.186.239,Segment B,High,Server
+SRV-0018,soc-node-0018,Linux,Finanzas,32.26.31.49,Segment B,Low,Firewall
+SRV-0019,soc-node-0019,Windows,Operaciones,47.125.34.52,Segment C,High,Firewall
+SRV-0020,soc-node-0020,Mac OS X,Finanzas,110.80.185.102,Segment B,High,Server
+SRV-0021,soc-node-0021,Mac OS X,Tecnologia,170.92.148.90,Segment A,Medium,Firewall
+SRV-0022,soc-node-0022,Windows,Operaciones,196.26.121.164,Segment C,Low,Server
+SRV-0023,soc-node-0023,Windows,Tecnologia,76.146.23.52,Segment A,High,Server
+SRV-0024,soc-node-0024,Windows,Tecnologia,68.194.124.162,Segment A,Medium,Firewall
+SRV-0025,soc-node-0025,Windows,Operaciones,105.193.254.47,Segment C,Medium,Server
+SRV-0026,soc-node-0026,Windows,Operaciones,9.149.23.14,Segment C,Low,Firewall
+SRV-0027,soc-node-0027,Windows,Operaciones,153.211.183.215,Segment C,High,Firewall
+SRV-0028,soc-node-0028,Windows,Tecnologia,121.167.40.167,Segment A,Low,Firewall
+SRV-0029,soc-node-0029,Linux,Operaciones,87.49.219.65,Segment C,Low,Firewall
+SRV-0030,soc-node-0030,Linux,Operaciones,160.208.108.125,Segment C,Medium,Firewall
+SRV-0031,soc-node-0031,Mac OS X,Operaciones,172.36.150.79,Segment C,Low,Firewall
+SRV-0032,soc-node-0032,Windows,Tecnologia,84.139.233.32,Segment A,Medium,Firewall
+SRV-0033,soc-node-0033,Linux,Finanzas,91.166.229.253,Segment B,Medium,Server
+SRV-0034,soc-node-0034,Mac OS X,Finanzas,4.104.218.143,Segment B,Low,Firewall
+SRV-0035,soc-node-0035,Mac OS X,Operaciones,93.146.128.133,Segment C,High,Server
+SRV-0036,soc-node-0036,Android,Tecnologia,27.5.94.221,Segment A,Low,Server
+SRV-0037,soc-node-0037,Mac OS X,Operaciones,72.56.150.150,Segment C,Medium,Firewall
+SRV-0038,soc-node-0038,Android,Finanzas,61.57.62.247,Segment B,Low,Server
+SRV-0039,soc-node-0039,Windows,Operaciones,142.92.111.242,Segment C,Medium,Firewall
+SRV-0040,soc-node-0040,Mac OS X,Tecnologia,109.17.204.56,Segment A,Medium,Server
+SRV-0041,soc-node-0041,Mac OS X,Tecnologia,59.138.247.230,Segment A,Medium,Firewall
+SRV-0042,soc-node-0042,Windows,Finanzas,137.104.11.138,Segment B,Low,Server
+SRV-0043,soc-node-0043,Linux,Tecnologia,21.28.78.79,Segment A,Low,Firewall
+SRV-0044,soc-node-0044,Windows,Tecnologia,76.154.100.68,Segment A,High,Server
+SRV-0045,soc-node-0045,Mac OS X,Tecnologia,201.55.168.126,Segment A,High,Server
+SRV-0046,soc-node-0046,Linux,Tecnologia,85.236.61.31,Segment A,Low,Firewall
+SRV-0047,soc-node-0047,Mac OS X,Tecnologia,172.97.181.148,Segment A,High,Firewall
+SRV-0048,soc-node-0048,Linux,Operaciones,45.35.146.21,Segment C,High,Server
+SRV-0049,soc-node-0049,Windows,Operaciones,43.100.128.47,Segment C,Medium,Firewall
+SRV-0050,soc-node-0050,Windows,Tecnologia,24.79.26.247,Segment A,High,Firewall
+SRV-0051,soc-node-0051,Windows,Tecnologia,110.54.165.63,Segment A,Low,Server
+SRV-0052,soc-node-0052,Windows,Finanzas,191.56.96.54,Segment B,High,Server
+SRV-0053,soc-node-0053,Linux,Finanzas,168.106.24.90,Segment B,Low,Firewall
+SRV-0054,soc-node-0054,Windows,Finanzas,68.144.93.235,Segment B,High,Server
+SRV-0055,soc-node-0055,Linux,Operaciones,211.64.146.125,Segment C,Medium,Server
+SRV-0056,soc-node-0056,Windows,Operaciones,43.219.176.9,Segment C,Low,Firewall
+SRV-0057,soc-node-0057,Mac OS X,Tecnologia,36.148.218.135,Segment A,Low,Server
+SRV-0058,soc-node-0058,Linux,Operaciones,204.179.190.185,Segment C,High,Server
+SRV-0059,soc-node-0059,Windows,Operaciones,154.223.194.82,Segment C,Low,Server
+SRV-0060,soc-node-0060,Mac OS X,Tecnologia,82.213.128.111,Segment A,High,Firewall
+SRV-0061,soc-node-0061,Linux,Tecnologia,189.14.24.22,Segment A,Low,Firewall
+SRV-0062,soc-node-0062,Mac OS X,Finanzas,7.195.147.252,Segment B,High,Server
+SRV-0063,soc-node-0063,Mac OS X,Operaciones,179.161.134.184,Segment C,Low,Server
+SRV-0064,soc-node-0064,Mac OS X,Finanzas,167.60.226.61,Segment B,High,Server
+SRV-0065,soc-node-0065,Windows,Tecnologia,135.172.206.155,Segment A,Low,Server
+SRV-0066,soc-node-0066,Mac OS X,Operaciones,205.172.143.0,Segment C,Medium,Firewall
+SRV-0067,soc-node-0067,Linux,Operaciones,180.17.247.177,Segment C,High,Firewall
+SRV-0068,soc-node-0068,Android,Finanzas,7.220.81.96,Segment B,Low,Server
+SRV-0069,soc-node-0069,Mac OS X,Tecnologia,22.188.5.93,Segment A,High,Firewall
+SRV-0070,soc-node-0070,Windows,Operaciones,107.0.155.243,Segment C,High,Firewall
+SRV-0071,soc-node-0071,Mac OS X,Finanzas,50.191.236.203,Segment B,High,Firewall
+SRV-0072,soc-node-0072,Mac OS X,Operaciones,36.211.253.244,Segment C,Medium,Firewall
+SRV-0073,soc-node-0073,Mac OS X,Tecnologia,19.155.138.245,Segment A,Low,Server
+SRV-0074,soc-node-0074,Windows,Finanzas,204.219.67.217,Segment B,Medium,Firewall
+SRV-0075,soc-node-0075,Windows,Finanzas,13.200.168.199,Segment B,High,Server
+SRV-0076,soc-node-0076,Mac OS X,Finanzas,155.90.185.195,Segment B,Low,Server
+SRV-0077,soc-node-0077,Windows,Finanzas,218.214.206.217,Segment B,Low,Server
+SRV-0078,soc-node-0078,Windows,Operaciones,190.9.156.57,Segment C,Low,Firewall
+SRV-0079,soc-node-0079,Windows,Tecnologia,46.220.52.17,Segment A,High,Server
+SRV-0080,soc-node-0080,Windows,Operaciones,92.133.40.138,Segment C,Medium,Server
+SRV-0081,soc-node-0081,Windows,Tecnologia,178.79.44.158,Segment A,Low,Firewall
+SRV-0082,soc-node-0082,Mac OS X,Finanzas,170.34.138.235,Segment B,Low,Firewall
+SRV-0083,soc-node-0083,Linux,Tecnologia,174.67.68.203,Segment A,Low,Firewall
+SRV-0084,soc-node-0084,Linux,Operaciones,159.213.20.78,Segment C,Low,Server
+SRV-0085,soc-node-0085,Linux,Finanzas,71.28.47.114,Segment B,High,Server
+SRV-0086,soc-node-0086,Linux,Tecnologia,38.176.49.37,Segment A,Low,Server
+SRV-0087,soc-node-0087,Mac OS X,Tecnologia,31.41.38.21,Segment A,Low,Firewall
+SRV-0088,soc-node-0088,Mac OS X,Finanzas,42.40.168.103,Segment B,Medium,Firewall
+SRV-0089,soc-node-0089,Mac OS X,Tecnologia,125.5.69.191,Segment A,Medium,Firewall
+SRV-0090,soc-node-0090,Linux,Tecnologia,165.165.89.101,Segment A,High,Server
+SRV-0091,soc-node-0091,Linux,Finanzas,154.189.148.49,Segment B,Medium,Firewall
+SRV-0092,soc-node-0092,Mac OS X,Operaciones,64.153.177.110,Segment C,Medium,Firewall
+SRV-0093,soc-node-0093,Windows,Finanzas,77.40.158.129,Segment B,Medium,Firewall
+SRV-0094,soc-node-0094,Windows,Tecnologia,214.36.26.162,Segment A,Low,Server
+SRV-0095,soc-node-0095,Linux,Operaciones,149.125.243.212,Segment C,Medium,Server
+SRV-0096,soc-node-0096,Linux,Operaciones,171.38.239.42,Segment C,High,Firewall
+SRV-0097,soc-node-0097,Mac OS X,Operaciones,72.77.74.9,Segment C,Medium,Server
+SRV-0098,soc-node-0098,Windows,Operaciones,197.202.27.160,Segment C,High,Server
+SRV-0099,soc-node-0099,Mac OS X,Finanzas,218.187.232.192,Segment B,Medium,Server
+SRV-0100,soc-node-0100,Windows,Operaciones,21.131.246.181,Segment C,Low,Server
+SRV-0101,soc-node-0101,Linux,Finanzas,117.180.242.111,Segment B,Medium,Firewall
+SRV-0102,soc-node-0102,Mac OS X,Operaciones,121.165.184.11,Segment C,Medium,Firewall
+SRV-0103,soc-node-0103,Windows,Operaciones,197.49.231.196,Segment C,Low,Server
+SRV-0104,soc-node-0104,Windows,Operaciones,64.111.164.43,Segment C,Medium,Firewall
+SRV-0105,soc-node-0105,Windows,Operaciones,183.6.121.71,Segment C,High,Firewall
+SRV-0106,soc-node-0106,Mac OS X,Operaciones,216.196.28.158,Segment C,Low,Server
+SRV-0107,soc-node-0107,Mac OS X,Operaciones,74.58.58.46,Segment C,Low,Server
+SRV-0108,soc-node-0108,Windows,Tecnologia,107.24.14.107,Segment A,Low,Server
+SRV-0109,soc-node-0109,Mac OS X,Operaciones,41.177.63.177,Segment C,Low,Firewall
+SRV-0110,soc-node-0110,Mac OS X,Finanzas,117.235.111.116,Segment B,Low,Server
+SRV-0111,soc-node-0111,Linux,Tecnologia,109.197.80.147,Segment A,Low,Server
+SRV-0112,soc-node-0112,Windows,Finanzas,81.164.233.152,Segment B,Low,Server
+SRV-0113,soc-node-0113,Mac OS X,Tecnologia,110.132.126.21,Segment A,High,Firewall
+SRV-0114,soc-node-0114,Mac OS X,Finanzas,98.123.107.77,Segment B,High,Firewall
+SRV-0115,soc-node-0115,Android,Tecnologia,68.159.228.93,Segment A,High,Firewall
+SRV-0116,soc-node-0116,Windows,Operaciones,146.21.102.253,Segment C,High,Firewall
+SRV-0117,soc-node-0117,Android,Tecnologia,147.51.254.72,Segment A,Medium,Server
+SRV-0118,soc-node-0118,Windows,Finanzas,218.199.100.246,Segment B,High,Firewall
+SRV-0119,soc-node-0119,Mac OS X,Tecnologia,105.23.80.132,Segment A,High,Firewall
+SRV-0120,soc-node-0120,Windows,Finanzas,9.53.243.2,Segment B,Medium,Firewall
+SRV-0121,soc-node-0121,Linux,Tecnologia,78.172.11.97,Segment A,High,Firewall
+SRV-0122,soc-node-0122,Mac OS X,Finanzas,144.62.44.31,Segment B,Medium,Firewall
+SRV-0123,soc-node-0123,Mac OS X,Operaciones,202.242.212.55,Segment C,Medium,Server
+SRV-0124,soc-node-0124,Mac OS X,Finanzas,207.157.165.225,Segment B,Medium,Firewall
+SRV-0125,soc-node-0125,Windows,Finanzas,47.104.175.219,Segment B,Low,Server
+SRV-0126,soc-node-0126,Mac OS X,Tecnologia,204.181.156.0,Segment A,Medium,Firewall
+SRV-0127,soc-node-0127,Windows,Finanzas,73.201.71.6,Segment B,Medium,Firewall
+SRV-0128,soc-node-0128,Linux,Operaciones,193.199.239.126,Segment C,Low,Server
+SRV-0129,soc-node-0129,Windows,Finanzas,18.182.113.129,Segment B,Medium,Server
+SRV-0130,soc-node-0130,Windows,Operaciones,157.91.254.247,Segment C,Low,Server
+SRV-0131,soc-node-0131,Mac OS X,Tecnologia,206.207.199.114,Segment A,Low,Firewall
+SRV-0132,soc-node-0132,Linux,Tecnologia,48.127.124.127,Segment A,Low,Server
+SRV-0133,soc-node-0133,Windows,Operaciones,33.185.161.157,Segment C,Low,Firewall
+SRV-0134,soc-node-0134,Linux,Operaciones,145.138.218.23,Segment C,Low,Firewall
+SRV-0135,soc-node-0135,Windows,Tecnologia,215.5.7.197,Segment A,High,Firewall
+SRV-0136,soc-node-0136,Mac OS X,Operaciones,31.226.121.151,Segment C,Low,Server
+SRV-0137,soc-node-0137,Linux,Operaciones,55.136.160.245,Segment C,High,Server
+SRV-0138,soc-node-0138,Mac OS X,Finanzas,91.194.147.130,Segment B,High,Firewall
+SRV-0139,soc-node-0139,Windows,Operaciones,116.107.209.186,Segment C,Medium,Firewall
+SRV-0140,soc-node-0140,Windows,Tecnologia,206.207.48.46,Segment A,Low,Firewall
+SRV-0141,soc-node-0141,Windows,Finanzas,59.14.235.25,Segment B,Medium,Server
+SRV-0142,soc-node-0142,Mac OS X,Finanzas,5.35.109.169,Segment B,Low,Firewall
+SRV-0143,soc-node-0143,Windows,Tecnologia,150.9.27.19,Segment A,High,Firewall
+SRV-0144,soc-node-0144,Windows,Tecnologia,47.212.142.21,Segment A,Medium,Firewall
+SRV-0145,soc-node-0145,Linux,Tecnologia,117.97.204.110,Segment A,High,Server
+SRV-0146,soc-node-0146,Mac OS X,Operaciones,152.193.86.107,Segment C,High,Firewall
+SRV-0147,soc-node-0147,Windows,Finanzas,34.167.108.175,Segment B,High,Firewall
+SRV-0148,soc-node-0148,Windows,Finanzas,21.79.133.234,Segment B,Low,Firewall
+SRV-0149,soc-node-0149,Mac OS X,Finanzas,19.83.69.229,Segment B,Low,Server
+SRV-0150,soc-node-0150,Windows,Tecnologia,136.66.208.155,Segment A,Medium,Firewall
+SRV-0151,soc-node-0151,Mac OS X,Operaciones,46.226.152.179,Segment C,Low,Firewall
+SRV-0152,soc-node-0152,Windows,Finanzas,158.144.143.90,Segment B,High,Server
+SRV-0153,soc-node-0153,Linux,Finanzas,49.24.193.94,Segment B,High,Server
+SRV-0154,soc-node-0154,Mac OS X,Tecnologia,7.198.146.170,Segment A,High,Firewall
+SRV-0155,soc-node-0155,Mac OS X,Operaciones,3.118.79.165,Segment C,High,Firewall
+SRV-0156,soc-node-0156,Mac OS X,Tecnologia,9.31.161.82,Segment A,Medium,Firewall
+SRV-0157,soc-node-0157,Mac OS X,Operaciones,110.212.170.21,Segment C,Low,Firewall
+SRV-0158,soc-node-0158,Windows,Tecnologia,56.220.194.14,Segment A,Medium,Server
+SRV-0159,soc-node-0159,Windows,Finanzas,85.69.149.85,Segment B,High,Firewall
+SRV-0160,soc-node-0160,Linux,Operaciones,91.20.53.117,Segment C,Low,Firewall
+SRV-0161,soc-node-0161,Windows,Operaciones,74.34.94.239,Segment C,Low,Firewall
+SRV-0162,soc-node-0162,Mac OS X,Tecnologia,121.217.211.213,Segment A,Low,Server
+SRV-0163,soc-node-0163,Linux,Tecnologia,100.253.162.223,Segment A,High,Server
+SRV-0164,soc-node-0164,Mac OS X,Tecnologia,8.30.176.111,Segment A,Low,Firewall
+SRV-0165,soc-node-0165,Linux,Tecnologia,50.53.189.125,Segment A,Medium,Server
+SRV-0166,soc-node-0166,Windows,Operaciones,43.250.137.209,Segment C,Low,Server
+SRV-0167,soc-node-0167,Mac OS X,Operaciones,11.39.120.114,Segment C,Low,Server
+SRV-0168,soc-node-0168,Mac OS X,Tecnologia,109.9.240.107,Segment A,High,Server
+SRV-0169,soc-node-0169,Windows,Tecnologia,71.203.239.172,Segment A,Medium,Firewall
+SRV-0170,soc-node-0170,Linux,Tecnologia,75.118.190.146,Segment A,Low,Firewall
+SRV-0171,soc-node-0171,Windows,Tecnologia,111.141.97.180,Segment A,Low,Server
+SRV-0172,soc-node-0172,Mac OS X,Operaciones,204.129.91.203,Segment C,Low,Firewall
+SRV-0173,soc-node-0173,Linux,Operaciones,116.12.80.116,Segment C,Low,Server
+SRV-0174,soc-node-0174,Linux,Tecnologia,188.5.118.35,Segment A,High,Firewall
+SRV-0175,soc-node-0175,Windows,Operaciones,12.163.45.8,Segment C,Low,Firewall
+SRV-0176,soc-node-0176,Mac OS X,Finanzas,5.54.3.221,Segment B,High,Firewall
+SRV-0177,soc-node-0177,Linux,Operaciones,157.5.83.69,Segment C,High,Firewall
+SRV-0178,soc-node-0178,Windows,Finanzas,138.230.84.186,Segment B,High,Server
+SRV-0179,soc-node-0179,Windows,Finanzas,7.133.41.239,Segment B,Low,Firewall
+SRV-0180,soc-node-0180,Windows,Finanzas,184.99.107.184,Segment B,Low,Firewall
+SRV-0181,soc-node-0181,Windows,Tecnologia,55.210.48.133,Segment A,Low,Firewall
+SRV-0182,soc-node-0182,Mac OS X,Finanzas,182.11.110.8,Segment B,Low,Server
+SRV-0183,soc-node-0183,Windows,Tecnologia,47.182.229.23,Segment A,High,Firewall
+SRV-0184,soc-node-0184,Windows,Operaciones,31.243.169.112,Segment C,Medium,Server
+SRV-0185,soc-node-0185,Mac OS X,Finanzas,171.247.4.156,Segment B,High,Server
+SRV-0186,soc-node-0186,Mac OS X,Tecnologia,143.206.49.2,Segment A,Low,Server
+SRV-0187,soc-node-0187,Mac OS X,Operaciones,175.204.107.216,Segment C,Low,Firewall
+SRV-0188,soc-node-0188,Mac OS X,Finanzas,49.126.133.177,Segment B,Medium,Server
+SRV-0189,soc-node-0189,Linux,Operaciones,64.112.118.102,Segment C,Low,Server
+SRV-0190,soc-node-0190,Windows,Operaciones,156.223.190.24,Segment C,Low,Server
+SRV-0191,soc-node-0191,Linux,Tecnologia,122.21.158.210,Segment A,Low,Server
+SRV-0192,soc-node-0192,Linux,Finanzas,110.174.196.227,Segment B,Low,Firewall
+SRV-0193,soc-node-0193,Windows,Finanzas,216.250.141.138,Segment B,High,Firewall
+SRV-0194,soc-node-0194,Linux,Operaciones,34.96.135.41,Segment C,Low,Server
+SRV-0195,soc-node-0195,Windows,Tecnologia,152.65.175.192,Segment A,Low,Server
+SRV-0196,soc-node-0196,Android,Operaciones,165.183.173.131,Segment C,High,Firewall
+SRV-0197,soc-node-0197,Mac OS X,Tecnologia,109.89.146.42,Segment A,Low,Firewall
+SRV-0198,soc-node-0198,Windows,Operaciones,82.243.180.194,Segment C,High,Firewall
+SRV-0199,soc-node-0199,Windows,Finanzas,91.73.252.92,Segment B,High,Firewall
+SRV-0200,soc-node-0200,Windows,Operaciones,87.142.87.242,Segment C,Medium,Firewall
+SRV-0201,soc-node-0201,Windows,Finanzas,115.202.177.66,Segment B,Low,Server
+SRV-0202,soc-node-0202,Windows,Tecnologia,65.44.31.247,Segment A,High,Firewall
+SRV-0203,soc-node-0203,Windows,Operaciones,6.201.62.32,Segment C,Low,Server
+SRV-0204,soc-node-0204,Mac OS X,Tecnologia,156.179.93.15,Segment A,Medium,Server
+SRV-0205,soc-node-0205,Linux,Finanzas,84.56.120.189,Segment B,High,Firewall
+SRV-0206,soc-node-0206,Windows,Finanzas,6.15.46.182,Segment B,Low,Firewall
+SRV-0207,soc-node-0207,Mac OS X,Operaciones,90.149.57.59,Segment C,Medium,Firewall
+SRV-0208,soc-node-0208,Mac OS X,Finanzas,162.90.72.92,Segment B,Medium,Firewall
+SRV-0209,soc-node-0209,Mac OS X,Tecnologia,194.166.45.88,Segment A,Low,Server
+SRV-0210,soc-node-0210,Windows,Finanzas,17.62.29.174,Segment B,Medium,Firewall
+SRV-0211,soc-node-0211,Linux,Finanzas,122.126.217.52,Segment B,Medium,Server
+SRV-0212,soc-node-0212,Windows,Operaciones,40.251.72.255,Segment C,High,Firewall
+SRV-0213,soc-node-0213,Windows,Finanzas,222.221.33.153,Segment B,High,Firewall
+SRV-0214,soc-node-0214,Windows,Tecnologia,131.169.236.53,Segment A,Low,Firewall
+SRV-0215,soc-node-0215,Windows,Operaciones,169.38.104.61,Segment C,High,Firewall
+SRV-0216,soc-node-0216,Windows,Finanzas,145.191.183.18,Segment B,Low,Server
+SRV-0217,soc-node-0217,Mac OS X,Tecnologia,171.179.184.111,Segment A,Low,Server
+SRV-0218,soc-node-0218,Windows,Finanzas,54.121.189.29,Segment B,Medium,Firewall
+SRV-0219,soc-node-0219,Windows,Finanzas,80.23.231.188,Segment B,Medium,Server
+SRV-0220,soc-node-0220,Mac OS X,Finanzas,13.68.91.5,Segment B,High,Firewall
+SRV-0221,soc-node-0221,Windows,Finanzas,160.198.87.152,Segment B,Low,Server
+SRV-0222,soc-node-0222,Windows,Finanzas,51.172.212.120,Segment B,Low,Server
+SRV-0223,soc-node-0223,Mac OS X,Operaciones,26.24.253.146,Segment C,Low,Server
+SRV-0224,soc-node-0224,Windows,Operaciones,139.198.241.166,Segment C,High,Server
+SRV-0225,soc-node-0225,Windows,Tecnologia,106.133.118.105,Segment A,High,Server
+SRV-0226,soc-node-0226,Windows,Operaciones,62.132.137.49,Segment C,Low,Firewall
+SRV-0227,soc-node-0227,Mac OS X,Operaciones,115.60.86.140,Segment C,Low,Server
+SRV-0228,soc-node-0228,Mac OS X,Finanzas,86.139.64.110,Segment B,Low,Server
+SRV-0229,soc-node-0229,Windows,Tecnologia,76.73.117.91,Segment A,High,Server
+SRV-0230,soc-node-0230,Linux,Operaciones,186.51.0.183,Segment C,High,Server
+SRV-0231,soc-node-0231,Windows,Operaciones,6.109.194.16,Segment C,Medium,Firewall
+SRV-0232,soc-node-0232,Windows,Finanzas,16.8.182.134,Segment B,High,Firewall
+SRV-0233,soc-node-0233,Linux,Tecnologia,175.88.31.3,Segment A,Low,Firewall
+SRV-0234,soc-node-0234,Linux,Finanzas,14.111.213.104,Segment B,Medium,Firewall
+SRV-0235,soc-node-0235,Mac OS X,Finanzas,199.31.5.137,Segment B,Medium,Firewall
+SRV-0236,soc-node-0236,Windows,Tecnologia,120.172.169.71,Segment A,High,Firewall
+SRV-0237,soc-node-0237,Mac OS X,Tecnologia,108.81.174.191,Segment A,Low,Server
+SRV-0238,soc-node-0238,Mac OS X,Finanzas,29.135.201.205,Segment B,Medium,Firewall
+SRV-0239,soc-node-0239,Linux,Tecnologia,206.95.20.253,Segment A,High,Server
+SRV-0240,soc-node-0240,Windows,Operaciones,52.83.49.239,Segment C,Medium,Firewall
+SRV-0241,soc-node-0241,Windows,Finanzas,197.59.221.221,Segment B,Low,Firewall
+SRV-0242,soc-node-0242,Windows,Tecnologia,88.188.182.204,Segment A,High,Server
+SRV-0243,soc-node-0243,Windows,Tecnologia,122.195.144.247,Segment A,Low,Firewall
+SRV-0244,soc-node-0244,Linux,Operaciones,199.218.68.12,Segment C,High,Firewall
+SRV-0245,soc-node-0245,Windows,Operaciones,186.181.55.141,Segment C,Medium,Server
+SRV-0246,soc-node-0246,Mac OS X,Operaciones,66.53.159.25,Segment C,Low,Server
+SRV-0247,soc-node-0247,Mac OS X,Finanzas,12.120.118.41,Segment B,High,Firewall
+SRV-0248,soc-node-0248,Windows,Tecnologia,20.162.29.248,Segment A,Low,Firewall
+SRV-0249,soc-node-0249,Linux,Finanzas,78.226.143.40,Segment B,Medium,Firewall
+SRV-0250,soc-node-0250,Mac OS X,Finanzas,57.16.71.161,Segment B,Medium,Server

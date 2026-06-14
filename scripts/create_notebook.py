@@ -23,30 +23,23 @@ def build_notebook():
     }
     nb["metadata"]["language_info"] = {"name": "python", "pygments_lexer": "ipython3"}
 
-    cells = [
+    nb["cells"] = [
         md(
-            "# Desarrollo G1 - Practica ETL Semana 1\n"
-            "\n"
-            "Dominio de negocio: ecommerce/ventas.\n"
-            "\n"
-            "Fuente de datos: Kaggle, dataset `olistbr/brazilian-ecommerce`.\n"
-            "\n"
-            "Objetivo: preparar un entorno ETL con Docker, PostgreSQL y Python, generar tres DataFrames principales y analizar valores nulos, estadisticos y agrupaciones."
+            "# Desarrollo G1 - Practica ETL Semana 1\n\n"
+            "Dominio de negocio: ciberseguridad y monitoreo de incidentes de red.\n\n"
+            "Fuente de datos: Kaggle, dataset `teamincribo/cyber-security-attacks`.\n\n"
+            "Objetivo: configurar PostgreSQL en Docker, cargar una tabla de hechos de alertas de red y analizar tres fuentes relacionadas: PostgreSQL, CSV y JSON."
         ),
         md(
-            "## 1. Configuracion inicial\n"
-            "\n"
-            "Se cargan librerias, variables de entorno y rutas de trabajo. La base PostgreSQL se levanta con `docker-compose.yml` y sus credenciales se leen desde `.env`."
+            "## 1. Configuracion inicial\n\n"
+            "Las credenciales de PostgreSQL se leen desde `.env`. Esto evita escribir usuarios, claves o puertos directamente en las celdas del notebook."
         ),
         code(
             "from pathlib import Path\n"
-            "import json\n"
-            "import os\n"
-            "\n"
+            "import os\n\n"
             "import pandas as pd\n"
             "from dotenv import load_dotenv\n"
-            "from sqlalchemy import create_engine\n"
-            "\n"
+            "from sqlalchemy import create_engine\n\n"
             "load_dotenv()\n"
             "RAW_DIR = Path('data/raw')\n"
             "postgres_url = (\n"
@@ -54,100 +47,91 @@ def build_notebook():
             "    f\"@{os.environ.get('POSTGRES_HOST', 'localhost')}:{os.environ.get('POSTGRES_PORT', '5432')}/{os.environ['POSTGRES_DB']}\"\n"
             ")\n"
             "engine = create_engine(postgres_url)\n"
-            "RAW_DIR.exists(), sorted(p.name for p in RAW_DIR.iterdir())"
+            "sorted(p.name for p in RAW_DIR.iterdir())"
         ),
         md(
-            "## 2. DataFrame 1 - PostgreSQL: order_items\n"
-            "\n"
-            "Este DataFrame se consulta desde la tabla `order_items` cargada en PostgreSQL. La fuente original es el archivo CSV de Kaggle `olist_order_items_dataset.csv`, convertido previamente a tabla de base de datos."
+            "## 2. DataFrame 1 - PostgreSQL: network_alerts\n\n"
+            "Este DataFrame proviene de la base PostgreSQL levantada con Docker. La tabla `network_alerts` funciona como tabla de hechos del proyecto SOC, con eventos, protocolos, severidad, tamano de paquete y puntajes de anomalia."
         ),
-        code(
-            "df_order_items_pg = pd.read_sql('SELECT * FROM order_items', engine)\n"
-            "df_order_items_pg.head()"
-        ),
+        code("df_alerts_pg = pd.read_sql('SELECT * FROM network_alerts', engine)\ndf_alerts_pg.head(5)"),
         code(
             "pd.DataFrame({\n"
-            "    'columna': df_order_items_pg.columns,\n"
-            "    'tiene_nulos': df_order_items_pg.isna().any().values,\n"
-            "    'valores_faltantes': df_order_items_pg.isna().sum().values,\n"
+            "    'columna': df_alerts_pg.columns,\n"
+            "    'tiene_nulos': df_alerts_pg.isna().any().values,\n"
+            "    'valores_faltantes': df_alerts_pg.isna().sum().values,\n"
+            "})"
+        ),
+        code("df_alerts_pg[['packet_length', 'anomaly_scores']].agg(['mean', 'max', 'min']).round(2)"),
+        code(
+            "(\n"
+            "    df_alerts_pg.groupby(['protocol', 'severity_level'])[['packet_length', 'anomaly_scores']]\n"
+            "    .agg(['max', 'min']).head(12).round(2)\n"
+            ")"
+        ),
+        md(
+            "## 3. DataFrame 2 - CSV: asset_inventory\n\n"
+            "Este DataFrame representa el inventario de activos de infraestructura. Se relaciona con `network_alerts` mediante `machine_id`, creado a partir de la IP destino de las alertas."
+        ),
+        code("df_assets_csv = pd.read_csv(RAW_DIR / 'asset_inventory.csv')\ndf_assets_csv.head(5)"),
+        code(
+            "pd.DataFrame({\n"
+            "    'columna': df_assets_csv.columns,\n"
+            "    'tiene_nulos': df_assets_csv.isna().any().values,\n"
+            "    'valores_faltantes': df_assets_csv.isna().sum().values,\n"
             "})"
         ),
         code(
-            "df_order_items_pg[['price', 'freight_value']].agg(['mean', 'max', 'min']).round(2)"
+            "df_assets_csv['criticality_score'] = df_assets_csv['criticality'].map({'Low': 1, 'Medium': 2, 'High': 3}).fillna(0)\n"
+            "df_assets_csv[['criticality_score']].agg(['mean', 'max', 'min']).round(2)"
         ),
         code(
-            "df_order_items_pg.groupby('seller_id')[['price', 'freight_value']].agg(['max', 'min']).head(10).round(2)"
+            "(\n"
+            "    df_assets_csv.groupby(['department', 'operating_system'])[['criticality_score']]\n"
+            "    .agg(['max', 'min']).head(12).round(2)\n"
+            ")"
         ),
         md(
-            "## 3. DataFrame 2 - CSV: orders\n"
-            "\n"
-            "Este DataFrame se lee directamente desde el archivo CSV `olist_orders_dataset.csv`. Se parsean fechas para calcular dias de procesamiento entre compra y entrega al transportista."
+            "## 4. DataFrame 3 - JSON: vulnerability_catalog\n\n"
+            "Este DataFrame se lee desde `vulnerability_catalog.json`. El catalogo mapea tipos de ataque y protocolos con CVE simulados, puntaje CVSS y accion de remediacion. Se relaciona con las alertas mediante `attack_type`, `protocol` y `severity_level`."
         ),
-        code(
-            "date_cols = ['order_purchase_timestamp', 'order_delivered_carrier_date']\n"
-            "df_orders_csv = pd.read_csv(RAW_DIR / 'olist_orders_dataset.csv', parse_dates=date_cols)\n"
-            "df_orders_csv['processing_days'] = (\n"
-            "    df_orders_csv['order_delivered_carrier_date'] - df_orders_csv['order_purchase_timestamp']\n"
-            ").dt.total_seconds() / 86400\n"
-            "df_orders_csv.head()"
-        ),
+        code("df_vulns_json = pd.read_json(RAW_DIR / 'vulnerability_catalog.json')\ndf_vulns_json.head(5)"),
         code(
             "pd.DataFrame({\n"
-            "    'columna': df_orders_csv.columns,\n"
-            "    'tiene_nulos': df_orders_csv.isna().any().values,\n"
-            "    'valores_faltantes': df_orders_csv.isna().sum().values,\n"
+            "    'columna': df_vulns_json.columns,\n"
+            "    'tiene_nulos': df_vulns_json.isna().any().values,\n"
+            "    'valores_faltantes': df_vulns_json.isna().sum().values,\n"
             "})"
         ),
+        code("df_vulns_json[['cvss_score']].agg(['mean', 'max', 'min']).round(2)"),
         code(
-            "df_orders_csv[['processing_days']].agg(['mean', 'max', 'min']).round(2)"
-        ),
-        code(
-            "df_orders_csv.groupby('order_status')[['processing_days']].agg(['max', 'min']).round(2)"
+            "(\n"
+            "    df_vulns_json.groupby(['protocol', 'severity_level'])[['cvss_score']]\n"
+            "    .agg(['max', 'min']).head(12).round(2)\n"
+            ")"
         ),
         md(
-            "## 4. DataFrame 3 - JSON: product_categories\n"
-            "\n"
-            "Este DataFrame se genera desde `product_categories.json`, archivo JSON creado a partir de la tabla de traduccion de categorias del dataset Kaggle. Se agregaron campos numericos de longitud de texto para poder analizar metricas."
+            "## 5. Relacion entre fuentes\n\n"
+            "Se integran las tres fuentes para responder preguntas de inteligencia de negocio en un contexto SOC: que departamentos concentran mas alertas, que protocolos tienen mayor riesgo y que activos requieren priorizacion."
         ),
         code(
-            "df_categories_json = pd.read_json(RAW_DIR / 'product_categories.json')\n"
-            "df_categories_json.head()"
-        ),
-        code(
-            "pd.DataFrame({\n"
-            "    'columna': df_categories_json.columns,\n"
-            "    'tiene_nulos': df_categories_json.isna().any().values,\n"
-            "    'valores_faltantes': df_categories_json.isna().sum().values,\n"
-            "})"
-        ),
-        code(
-            "df_categories_json[['category_name_length', 'english_name_length']].agg(['mean', 'max', 'min']).round(2)"
-        ),
-        code(
-            "df_categories_json.groupby('first_letter')[['category_name_length', 'english_name_length']].agg(['max', 'min']).head(10).round(2)"
+            "df_integrated = (\n"
+            "    df_alerts_pg.merge(df_assets_csv, on='machine_id', how='left')\n"
+            "    .merge(df_vulns_json, on=['attack_type', 'protocol', 'severity_level'], how='left')\n"
+            ")\n"
+            "(\n"
+            "    df_integrated.groupby(['department', 'severity_level'])[['anomaly_scores', 'cvss_score']]\n"
+            "    .agg(['mean', 'max', 'min', 'count']).round(2).head(12)\n"
+            ")"
         ),
         md(
-            "## 5. Observaciones generales\n"
-            "\n"
-            "- El flujo integra fuentes heterogeneas: PostgreSQL, CSV y JSON.\n"
-            "- Los datos de ventas permiten medir precios, fletes, estados de orden y categorias de producto.\n"
-            "- La separacion entre descarga, carga y analisis facilita repetir el ETL sin rehacer el proyecto manualmente."
-        ),
-        md(
-            "# Aplicacion Profesional de la Practica\n"
-            "\n"
-            "## Carlos Diaz\n"
-            "\n"
-            "En mi contexto profesional me interesa aplicar estos conocimientos en areas de ecommerce, operaciones digitales y automatizacion comercial. En estos entornos se generan datos de ventas, productos, clientes, pagos, conversaciones de WhatsApp, campanas publicitarias, costos de envio, estados de entrega y eventos de seguimiento. Estos datos normalmente viven en sistemas separados, por ejemplo plataformas de tienda, hojas de calculo, bases transaccionales, CRMs, APIs de publicidad y archivos descargados manualmente.\n"
-            "\n"
-            "PostgreSQL, Docker y Python pueden organizar ese flujo de una manera mas profesional. Docker permite levantar una base de datos aislada y repetible, sin depender de configuraciones manuales de una computadora especifica. PostgreSQL sirve como repositorio estructurado para almacenar tablas limpias de pedidos, productos, clientes o pagos. Python permite automatizar la lectura de archivos CSV y JSON, transformar columnas, validar valores faltantes, calcular indicadores y cargar resultados hacia la base de datos.\n"
-            "\n"
-            "Implementar un proceso ETL aportaria orden, trazabilidad y velocidad. En lugar de revisar reportes desconectados, la organizacion podria tener un flujo donde los datos se extraen desde sus fuentes, se transforman con reglas claras y se cargan en una base lista para analisis. Esto reduce errores humanos, mejora la consistencia de los reportes y permite repetir el proceso cada semana o cada dia.\n"
-            "\n"
-            "Con la informacion integrada se podrian resolver decisiones concretas: identificar productos con mejor margen, detectar demoras logisticas, comparar desempeno por canal de venta, medir conversion real de campanas, encontrar pedidos con problemas y priorizar acciones comerciales. Tambien se podrian crear tableros de seguimiento para que gerencia vea ventas, costos y cumplimiento operativo con datos actualizados. En resumen, la practica conecta herramientas tecnicas con una necesidad real: convertir datos dispersos en informacion confiable para decidir mejor."
+            "# Aplicacion Profesional de la Practica\n\n"
+            "## Carlos Diaz\n\n"
+            "En mi contexto profesional, esta practica puede aplicarse directamente al area de infraestructura tecnologica, operaciones cloud y ciberseguridad. En este tipo de entorno se generan datos de logs de red, eventos de firewall, alertas IDS/IPS, inventario de servidores, sistemas operativos, direcciones IP, severidad de incidentes, acciones tomadas y vulnerabilidades asociadas. Normalmente estos datos se encuentran dispersos entre consolas, archivos CSV, servicios cloud, herramientas de monitoreo y reportes manuales.\n\n"
+            "PostgreSQL, Docker y Python permiten ordenar ese ecosistema. Docker facilita levantar una base de datos reproducible para pruebas o analisis sin depender de configuraciones manuales de una sola computadora. PostgreSQL permite almacenar de forma estructurada las alertas y consultarlas con criterios consistentes. Python ayuda a extraer archivos de Kaggle u otras fuentes, transformar columnas, detectar nulos, crear claves de relacion y generar indicadores de riesgo.\n\n"
+            "Un proceso ETL aportaria trazabilidad, repetibilidad y mejor toma de decisiones. En vez de revisar logs aislados, la organizacion podria integrar alertas, activos y vulnerabilidades en un modelo comun. Esto ayudaria a identificar departamentos con mayor exposicion, protocolos mas atacados, servidores criticos con alertas recurrentes y vulnerabilidades que requieren remediacion prioritaria.\n\n"
+            "Con esta informacion se podrian resolver problemas concretos: priorizar parches, reducir falsos positivos, justificar inversiones de seguridad, definir reglas de firewall, medir el comportamiento de incidentes por segmento de red y entregar reportes ejecutivos basados en evidencia. La practica demuestra como pasar de archivos sueltos a informacion confiable para operar mejor un entorno tecnologico."
         ),
     ]
-    nb["cells"] = cells
     return nb
 
 
@@ -161,4 +145,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-

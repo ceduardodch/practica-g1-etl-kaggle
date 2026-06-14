@@ -1,1 +1,1 @@
-loaded table order_items rows=112650 avg_price=120.65
+loaded table network_alerts rows=10000 avg_packet_length=788.30
